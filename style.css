@@ -45,6 +45,7 @@ p {
     background-color: white;
     font-weight: bold;
     font-size: 22px;
+    flex-wrap: wrap;
 }
 
 #c {

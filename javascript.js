@@ -2,6 +2,7 @@ let split_list = "";
 let first_Num = 0;
 let second_num = 0;
 let answer1 = [];
+let answer2 = 0;
 let answer_text = document.querySelector("p");
 let last_num_index = 0;
 let text = document.getElementById("text1").value;
@@ -43,7 +44,8 @@ function calculate() {
         first_Num = Number(split_list[0]);
         second_num = Number(split_list[1]);
         answer1 = first_Num / second_num;
-        answer_text.textContent = answer1;
+        answer2 = answer1.toFixed(6)
+        answer_text.textContent = answer2;
 
     } else if (operator == "/" && operator_counter >= 2) {
         split_list = text.split("/")
@@ -51,7 +53,8 @@ function calculate() {
         last_num_index = split_list.length - 1;
         second_num = Number(split_list[last_num_index]);
         answer1 = first_Num / second_num;
-        answer_text.textContent = answer1;
+        answer2 = answer1.toFixed(6)
+        answer_text.textContent = answer2;
 
     } else if (operator == "-" && operator_counter == 1) {
         split_list = text.split("-");
@@ -108,7 +111,7 @@ buttons.forEach(button => {
 
         } else if (button.id == "equal_btn") {
             equal_sign_counter += 1
-            if (equal_sign_counter > 1) {  
+            if (equal_sign_counter > 1) {
                 answer_text.textContent = answer1
                 calculate_text.value += ""
                 operator_counter = 0;
@@ -116,22 +119,22 @@ buttons.forEach(button => {
                 answer_text.textContent = answer1
                 calculate_text.value += "=";
                 operator_counter = 0;
-                
-                
+
+
             }
-        } else if (equal_sign_counter >= 1 && operator_counter < 1){
-                answer_text.textContent = ""
-                calculate_text.value = "";
-                operator = "";
-                calculate_text.value += button.id;
-                operator_counter = 0;
-                equal_sign_counter = 0;
-                calculate()
-            } else {
-                answer_text.textContent = ""
-                calculate_text.value += button.id;
-                calculate()
-            }
+        } else if (equal_sign_counter >= 1 && operator_counter < 1) {
+            answer_text.textContent = ""
+            calculate_text.value = "";
+            operator = "";
+            calculate_text.value += button.id;
+            operator_counter = 0;
+            equal_sign_counter = 0;
+            calculate()
+        } else {
+            answer_text.textContent = ""
+            calculate_text.value += button.id;
+            calculate()
+        }
 
 
     })

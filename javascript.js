@@ -107,32 +107,31 @@ buttons.forEach(button => {
             operator_counter = 0;
 
         } else if (button.id == "equal_btn") {
-            equal_sign_counter += 1;
-            if (plus > 1) {
-                operator = "";
-                answer1 = 0;
+            equal_sign_counter += 1
+            if (equal_sign_counter > 1) {  
+                answer_text.textContent = answer1
+                calculate_text.value += ""
                 operator_counter = 0;
             } else {
-                calculate_text.value += "="
-                operator = "";
-                answer1 = 0;
+                answer_text.textContent = answer1
+                calculate_text.value += "=";
                 operator_counter = 0;
+                
+                
             }
-        } else {
-            if (equal_sign_counter >= 1) {
+        } else if (equal_sign_counter >= 1 && operator_counter < 1){
                 answer_text.textContent = ""
-                calculate_text.value = ""
+                calculate_text.value = "";
+                operator = "";
                 calculate_text.value += button.id;
+                operator_counter = 0;
                 equal_sign_counter = 0;
-                answer1 = 0;
-
+                calculate()
             } else {
                 answer_text.textContent = ""
                 calculate_text.value += button.id;
                 calculate()
             }
-
-        }
 
 
     })

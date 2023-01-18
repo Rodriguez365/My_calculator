@@ -58,6 +58,7 @@ p {
     font-weight: bold;
     font-size: 22px;
     background-color: beige;
+   
 }
 
 #c {
@@ -108,5 +109,11 @@ button:hover {
         width: 197px;
         height: 230px;
         gap: 5px;
+    }
+    p{
+        font-size: 17px;
+    }
+    input[type="text" i] {
+        font-size: 15px;
     }
 }

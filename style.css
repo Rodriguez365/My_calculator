@@ -58,7 +58,6 @@ p {
     font-weight: bold;
     font-size: 22px;
     background-color: beige;
-   
 }
 
 #c {
@@ -76,7 +75,6 @@ button {
 #text_answer {
     border-style: groove;
     width: 233px;
-    ;
     background-color: transparent;
     border-top-right-radius: 53px;
     border-width: 1px;
@@ -104,13 +102,14 @@ button:hover {
     }
     p {
         width: 184px;
+        overflow-x: scroll;
     }
     #buttons {
         width: 197px;
         height: 230px;
         gap: 5px;
     }
-    p{
+    p {
         font-size: 17px;
     }
     input[type="text" i] {
